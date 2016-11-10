@@ -1,0 +1,206 @@
+@import "mixins";
+nav.navbar {
+	padding: 0;
+	border: 0;
+	box-shadow: inset 0 -4px 0 0px $silver, 0px 1px 2px 0px rgba(0, 0, 0, 0.34);
+	&.navbar-default {
+		background: $clouds;
+		will-change: transform;
+		transition: all 200ms linear;
+		&.navbar--top {
+			opacity: 1;
+			transform: translateY(0%);
+		}
+		&.navbar--not-top {
+			opacity: 0;
+			transform: translateY(-100%);
+		}
+		.navbar-content {
+			@include make-row();
+			.logo {
+				@include make-xs-column(12);
+				@include make-sm-column(4);
+				padding: 2rem;
+				img {
+					height: 3rem;
+					@include breakpoint($screen-sm-min) {
+						width: auto;
+						margin: auto;
+						display: block;
+					}
+				}
+			}
+			.navbar-search {
+				@include make-xs-column(12);
+				@include make-sm-column(8);
+				padding: 1rem 2rem;
+				background: $concrete;
+				border-bottom: 4px solid $asbestos;
+				.searchbox {
+					position: relative;
+					min-width: 5.2rem;
+					width: 0%;
+					height: 5.2rem;
+					float: right;
+					overflow: hidden;
+					-webkit-transition: width 0.3s;
+					-moz-transition: width 0.3s;
+					-ms-transition: width 0.3s;
+					-o-transition: width 0.3s;
+					transition: width 0.3s;
+					border-radius: 2.6rem;
+					border: 1px solid $silver;
+				}
+				.searchbox-input {
+					top: 0;
+					right: 0;
+					border: 0;
+					outline: 0;
+					background: white;
+					width: 100%;
+					height: 5.2rem;
+					margin: 0;
+					padding: 0px 55px 0px 20px;
+					color: $asbestos;
+					border-radius: 2.6rem
+				}
+				.searchbox-input::-webkit-input-placeholder {
+					color: $concrete;
+				}
+				.searchbox-input:-moz-placeholder {
+					color: $concrete;
+				}
+				.searchbox-input::-moz-placeholder {
+					color: $concrete;
+				}
+				.searchbox-input:-ms-input-placeholder {
+					color: $concrete;
+				}
+				.searchbox-icon, .searchbox-submit {
+					width: 5.2rem;
+					height: 5.2rem;
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					padding: 0;
+					margin: 0;
+					border: 0;
+					outline: 0;
+					text-align: center;
+					cursor: pointer;
+					color: $midnightblue;
+					background: white;
+					font-size: 2rem;
+					line-height: 5.2rem;
+					border-radius: 2.6rem
+				}
+				.searchbox-open {
+					width: 100%;
+				}
+			}
+		}
+	}
+	&.navbar-secondary {
+		background: $clouds;
+		//border: 1px solid $bordercolor;
+		//border-width: 0 0 1px;
+		border: 0;
+		box-shadow: inset 0 -4px 0 0px $silver, 0px 1px 2px 0px rgba(0, 0, 0, 0.34);
+		.navbar-links {
+			@include make-row();
+			.navbar-logo-mini {
+				padding: 2rem;
+				border: none;
+				background: $clouds;
+				float: left;
+				box-shadow: inset 0 -4px 0 0px $silver;
+				img {
+					height: 3rem;
+				}
+				@include breakpoint(768px) {
+					width: 20%;
+				}
+			}
+			.navbar-gpu-title {
+				float: left;
+				font-size: 1.8rem;
+				font-weight: bold;
+				color: white;
+				background: $concrete;
+				padding: 1.8rem 4rem 2.2rem;
+				transition: all 300ms;
+				box-shadow: inset 0 -4px 0 0px $asbestos;
+				&:hover {
+					background: $peterriver;
+					box-shadow: inset 0 -4px 0 0px $belizehole;
+				}
+				@include breakpoint(767px) {
+					padding: 2rem;
+					width: 60%;
+				}
+			}
+			ul.navbar-link-section.nav {
+				@include breakpoint(768px) {
+					display: none;
+				}
+				float: left;
+				padding-left: 0;
+				margin-bottom: 0;
+				li {
+					display: block;
+					float: left;
+					&.active a {
+						border-bottom: 4px solid $peterriver !important;
+						transition: all 100ms;
+						background: white;
+					}
+					a {
+						display: block;
+						float: left;
+						font-size: 1.4rem;
+						font-weight: bold;
+						color: $wetasphalt;
+						padding: 2.1rem 3rem;
+						text-decoration: none;
+						transition: background 200ms;
+						&:hover {
+							background: white;
+						}
+						.navbar-links-text {
+							@media (min-width: 768px) {
+								display: none;
+							}
+							@media (min-width: 992px) {
+								display: none;
+							}
+							@media (min-width: 1200px) {
+								display: inline;
+							}
+						}
+					}
+				}
+			}
+			.search-icon {
+				display: block;
+				float: right;
+				font-size: 1.4rem;
+				font-weight: bold;
+				padding: 2.1rem 3rem;
+				color: white;
+				background: $concrete;
+				transition: all 300ms;
+				border-bottom: 4px solid $asbestos;
+				&:hover {
+					background: $peterriver;
+					border-bottom: 4px solid $belizehole;
+				}
+				@include breakpoint(768px) {
+					width: 20%;
+					background: $peterriver;
+					border-bottom: 4px solid $belizehole;
+				}
+			}
+		}
+	}
+}

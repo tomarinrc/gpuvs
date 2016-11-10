@@ -1,0 +1,21 @@
+//Import bootstrap
+@import "plugins/customVariables";
+@import "plugins/bootstrap";
+//Import Site Modules
+@import "modules/header";
+@import "modules/hero";
+@import "modules/main";
+@import "modules/footer";
+//@import "modules/hero";
+//@import "modules/content";
+//Site Globals Overides
+body {
+  position: relative;
+}
+
+.input-group {
+    width: 100%;
+    .btn-search {
+        width: 100%;
+    }
+}

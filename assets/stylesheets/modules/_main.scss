@@ -1,0 +1,222 @@
+@import "mixins";
+//Backgrounds
+
+/*#gpu-benchmarks {
+	background: url('assets/images/bench-bg.png');
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#gpu-gaming {
+	background: url('assets/images/gaming-bg.png');
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	background-position: center;
+}*/
+
+.gpu-section-title {
+	width: 100%;
+	background: $belizehole;
+	position: relative;
+	z-index: 100;
+	color: white;
+	h2 {
+		font-family: 'Fjalla One', sans-serif;
+		font-size: 3.2rem;
+		text-transform: uppercase;
+		margin: 2rem 0 0;
+	}
+	p {}
+}
+
+.gpu-section {
+	@include make-row();
+	margin: 2rem -15px 4rem;
+}
+
+#gpu-gaming h2 i.fa.gpu-section-icon {
+	font-size: 4rem !important;
+}
+
+.chart {
+	@include make-sm-column(6);
+	margin: 2rem 0;
+	@include breakpoint($screen-xs-min) {
+		margin: 2rem 0 4rem;
+	}
+	.chart-title {
+		font-family: 'Fjalla One', sans-serif;
+		font-size: 2.2rem;
+		margin: 0;
+	}
+	.chart-subtitle {}
+	.chart-bar {
+		width: 100%;
+		height: 5rem;
+		margin: 0 0 1rem;
+		background: $silver;
+		position: relative;
+		.chart-bar-gpu {
+			color: white;
+			font-weight: bold;
+			float: left;
+			margin: 1.25rem 2rem;
+			display: block;
+			position: relative;
+			z-index: 3;
+		}
+		.chart-bar-value {
+			color: white;
+			font-weight: bold;
+			float: right;
+			margin: 1.25rem 2rem;
+			display: block;
+			position: relative;
+			z-index: 3;
+		}
+		.chart-bar-fill {
+			position: absolute;
+			width: 40%;
+			height: 5rem;
+			background: $concrete;
+			z-index: 2;
+			transition: background 300ms;
+			&.top-card {
+				background: $peterriver;
+				&:hover {
+					background: $belizehole;
+				}
+			}
+			&:hover {
+				background: $peterriver;
+			}
+		}
+	}
+}
+
+.review-col {
+	@include make-sm-column(4);
+	.review-overlay {
+		content: ' ';
+		background: $asbestos;
+		position: relative;
+		z-index: 1;
+	}
+	.review {
+		margin: 2rem 0;
+		color: white;
+		border-radius: 2px;
+		background: $asbestos;
+		transition: all 400ms;
+		i.fa.fa-youtube-play {
+			position: absolute;
+			top: 36%;
+			left: 42%;
+			font-size: 6rem;
+			opacity: .4;
+			@include breakpoint(480px) {
+				top: 40%;
+			}
+			@include breakpoint($screen-sm-min) {
+				top: 40%;
+			}
+			@include breakpoint($screen-xs-min) {
+				top: 30%;
+			}
+		}
+		&.youtube-link:hover {
+			background: $alizarin;
+		}
+		img {
+			width: 100%;
+			opacity: .12;
+		}
+		/*&.review-vid {
+			background: $alizarin;
+		}
+		&.review-site {
+			background: $asbestos;
+		}*/
+		.review-details {
+			position: absolute;
+			top: 60%;
+			left: 4rem;
+			@include breakpoint(480px) {
+				top: 40%;
+			}
+			@include breakpoint($screen-sm-min) {
+				top: 70%;
+			}
+			@include breakpoint($screen-xs-min) {
+    		top: 60%;
+    	}
+		}
+		.review-title {
+			font-family: 'Fjalla One', sans-serif;
+			font-size: 2.2rem;
+			margin: 0;
+			position: relative;
+			z-index: 2;
+		}
+		.review-subtitle {
+			margin: 0;
+			position: relative;
+			z-index: 2;
+		}
+	}
+}
+
+.specs-list {
+	@include make-sm-column(6);
+	height: 340px;
+	h3.specs-list-title {
+		font-family: 'Fjalla One', sans-serif;
+		font-size: 2.2rem;
+		margin: 2rem 0 1rem;
+	}
+	table {
+		width: 100%;
+		border-right: 1px solid $clouds;
+		transition: all 300ms;
+		&:hover {
+			border-right: 2px solid $peterriver;
+		}
+		thead {
+			width: 100%;
+			tr {
+				width: 100%;
+				th {
+					width: 100%;
+					padding: 2rem 0;
+					font-family: 'Fjalla One', sans-serif;
+					font-size: 2.2rem;
+				}
+			}
+		}
+		tbody {
+			width: 100%;
+			tr {
+				width: 100%;
+				//border: 1px solid $bordercolor;
+				//border-width: 1px 0;
+				&:nth-child(2n+1) {
+					//background: $clouds;
+				}
+				th {
+					width: 50%;
+					padding: .6rem 0;
+					font-weight: normal;
+				}
+				td {
+					width: 50%;
+					padding: .6rem 2rem;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
