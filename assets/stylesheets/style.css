@@ -5805,15 +5805,17 @@ button.close {
   .hidden-print {
     display: none !important; } }
 nav.navbar {
-  padding: 0; }
+  padding: 0;
+  border: 0;
+  box-shadow: inset 0 -4px 0 0px #bdc3c7, 0px 1px 2px 0px rgba(0, 0, 0, 0.34); }
   nav.navbar.navbar-default {
     background: #ecf0f1;
     will-change: transform;
-    transition: all 240ms linear; }
-    nav.navbar.navbar-default.navbar--pinned {
+    transition: all 200ms linear; }
+    nav.navbar.navbar-default.navbar--top {
       opacity: 1;
       transform: translateY(0%); }
-    nav.navbar.navbar-default.navbar--unpinned {
+    nav.navbar.navbar-default.navbar--not-top {
       opacity: 0;
       transform: translateY(-100%); }
     nav.navbar.navbar-default .navbar-content {
@@ -5842,7 +5844,7 @@ nav.navbar {
             width: 33.33333%; } }
         nav.navbar.navbar-default .navbar-content .logo img {
           height: 3rem; }
-          @media (max-width: 480px) {
+          @media (max-width: 768px) {
             nav.navbar.navbar-default .navbar-content .logo img {
               width: auto;
               margin: auto;
@@ -5858,7 +5860,9 @@ nav.navbar {
         min-height: 1px;
         padding-left: 15px;
         padding-right: 15px;
-        padding: .8rem 2rem; }
+        padding: 1rem 2rem;
+        background: #95a5a6;
+        border-bottom: 4px solid #7f8c8d; }
         @media (min-width: 768px) {
           nav.navbar.navbar-default .navbar-content .navbar-search {
             float: left;
@@ -5919,7 +5923,8 @@ nav.navbar {
           width: 100%; }
   nav.navbar.navbar-secondary {
     background: #ecf0f1;
-    border: none; }
+    border: 0;
+    box-shadow: inset 0 -4px 0 0px #bdc3c7, 0px 1px 2px 0px rgba(0, 0, 0, 0.34); }
     nav.navbar.navbar-secondary .navbar-links {
       margin-left: -15px;
       margin-right: -15px; }
@@ -5932,37 +5937,84 @@ nav.navbar {
         padding: 2rem;
         border: none;
         background: #ecf0f1;
-        float: left; }
+        float: left;
+        box-shadow: inset 0 -4px 0 0px #bdc3c7; }
         nav.navbar.navbar-secondary .navbar-links .navbar-logo-mini img {
           height: 3rem; }
+        @media (max-width: 768px) {
+          nav.navbar.navbar-secondary .navbar-links .navbar-logo-mini {
+            width: 20%; } }
       nav.navbar.navbar-secondary .navbar-links .navbar-gpu-title {
         float: left;
         font-size: 1.8rem;
         font-weight: bold;
         color: white;
-        background: #2c3e50;
-        padding: 2rem 4rem; }
-        @media (max-width: 480px) {
+        background: #95a5a6;
+        padding: 1.8rem 4rem 2.2rem;
+        transition: all 300ms;
+        box-shadow: inset 0 -4px 0 0px #7f8c8d; }
+        nav.navbar.navbar-secondary .navbar-links .navbar-gpu-title:hover {
+          background: #3498db;
+          box-shadow: inset 0 -4px 0 0px #2980b9; }
+        @media (max-width: 767px) {
           nav.navbar.navbar-secondary .navbar-links .navbar-gpu-title {
-            padding: 2rem; } }
-      nav.navbar.navbar-secondary .navbar-links .navbar-link-section {
-        float: left; }
-        @media (max-width: 480px) {
-          nav.navbar.navbar-secondary .navbar-links .navbar-link-section {
+            padding: 2rem;
+            width: 60%; } }
+      nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav {
+        float: left;
+        padding-left: 0;
+        margin-bottom: 0; }
+        @media (max-width: 768px) {
+          nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav {
             display: none; } }
-        nav.navbar.navbar-secondary .navbar-links .navbar-link-section a {
+        nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav li {
           display: block;
-          float: left;
-          font-size: 1.4rem;
-          font-weight: bold;
-          color: #34495e;
-          padding: 2.1rem 3rem;
-          text-decoration: none;
-          transition: all 80ms; }
-          nav.navbar.navbar-secondary .navbar-links .navbar-link-section a.selected {
-            border-bottom: 4px solid #3498db !important; }
-          nav.navbar.navbar-secondary .navbar-links .navbar-link-section a:hover {
-            border-bottom: 4px solid #bdc3c7; }
+          float: left; }
+          nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav li.active a {
+            border-bottom: 4px solid #3498db !important;
+            transition: all 100ms;
+            background: white; }
+          nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav li a {
+            display: block;
+            float: left;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #34495e;
+            padding: 2.1rem 3rem;
+            text-decoration: none;
+            transition: background 200ms; }
+            nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav li a:hover {
+              background: white; }
+            @media (min-width: 768px) {
+              nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav li a .navbar-links-text {
+                display: none; } }
+            @media (min-width: 992px) {
+              nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav li a .navbar-links-text {
+                display: none; } }
+            @media (min-width: 1200px) {
+              nav.navbar.navbar-secondary .navbar-links ul.navbar-link-section.nav li a .navbar-links-text {
+                display: inline; } }
+      nav.navbar.navbar-secondary .navbar-links .search-icon {
+        display: block;
+        float: right;
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding: 2.1rem 3rem;
+        color: white;
+        background: #95a5a6;
+        transition: all 300ms;
+        border-bottom: 4px solid #7f8c8d; }
+        nav.navbar.navbar-secondary .navbar-links .search-icon:hover {
+          background: #3498db;
+          border-bottom: 4px solid #2980b9; }
+        @media (max-width: 768px) {
+          nav.navbar.navbar-secondary .navbar-links .search-icon {
+            width: 20%;
+            background: #3498db;
+            border-bottom: 4px solid #2980b9; } }
+
+.gpu-hero-venderBG {
+  width: 100%; }
 
 @media (max-width: 768px) {
   .gpu-hero-container {
@@ -5987,8 +6039,6 @@ nav.navbar {
       height: 80vh; } }
   .gpu-hero .gpu-quickinfo {
     position: relative;
-    float: left;
-    width: 100%;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
@@ -5997,6 +6047,10 @@ nav.navbar {
     position: relative;
     z-index: 100;
     background: rgba(255, 255, 255, 0.9); }
+    @media (min-width: 768px) {
+      .gpu-hero .gpu-quickinfo {
+        float: left;
+        width: 50%; } }
     .gpu-hero .gpu-quickinfo .gpu-quickinfo-container {
       position: absolute;
       top: 50%;
@@ -6004,7 +6058,8 @@ nav.navbar {
       .gpu-hero .gpu-quickinfo .gpu-quickinfo-container h1.gpu-name {
         font-size: 4.8rem;
         color: #34495e;
-        font-weight: bold; }
+        font-weight: bold;
+        margin-left: -4px; }
         .gpu-hero .gpu-quickinfo .gpu-quickinfo-container h1.gpu-name .gpu-brand {
           font-weight: normal;
           letter-spacing: -2px; }
@@ -6022,7 +6077,8 @@ nav.navbar {
         padding: 1rem 4rem;
         display: inline-block;
         margin: 2rem 2rem 0 0;
-        text-decoration: none; }
+        text-decoration: none;
+        transition: all 300ms; }
         .gpu-hero .gpu-quickinfo .gpu-quickinfo-container .gpu-quickinfo-button.specs {
           color: #2980b9;
           background: none;
@@ -6030,6 +6086,8 @@ nav.navbar {
         .gpu-hero .gpu-quickinfo .gpu-quickinfo-container .gpu-quickinfo-button.compare {
           color: white;
           background: #2980b9; }
+          .gpu-hero .gpu-quickinfo .gpu-quickinfo-container .gpu-quickinfo-button.compare:hover {
+            background: #3498db; }
       @media (max-width: 768px) {
         .gpu-hero .gpu-quickinfo .gpu-quickinfo-container {
           padding: 0 1.5rem; } }
@@ -6061,6 +6119,22 @@ nav.navbar {
           width: 200%;
           top: -50%; } }
 
+/*#gpu-benchmarks {
+	background: url('assets/images/bench-bg.png');
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#gpu-gaming {
+	background: url('assets/images/gaming-bg.png');
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	background-position: center;
+}*/
 .gpu-section-title {
   width: 100%;
   background: #2980b9;
@@ -6076,18 +6150,15 @@ nav.navbar {
 .gpu-section {
   margin-left: -15px;
   margin-right: -15px;
-  margin: 2rem -15px 6rem; }
+  margin: 2rem -15px 4rem; }
   .gpu-section:before, .gpu-section:after {
     content: " ";
     display: table; }
   .gpu-section:after {
     clear: both; }
-  @media (max-width: 480px) {
-    .gpu-section {
-      margin: 2rem -15px 4rem; } }
 
-.gpu-section-icon {
-  font-size: 0.92em; }
+#gpu-gaming h2 i.fa.gpu-section-icon {
+  font-size: 4rem !important; }
 
 .chart {
   position: relative;
@@ -6133,7 +6204,8 @@ nav.navbar {
       width: 40%;
       height: 5rem;
       background: #95a5a6;
-      z-index: 2; }
+      z-index: 2;
+      transition: background 300ms; }
       .chart .chart-bar .chart-bar-fill.top-card {
         background: #3498db; }
         .chart .chart-bar .chart-bar-fill.top-card:hover {
@@ -6141,38 +6213,163 @@ nav.navbar {
       .chart .chart-bar .chart-bar-fill:hover {
         background: #3498db; }
 
-.review {
-  margin: 2rem 15px;
-  padding: 2rem 4rem 1.6rem;
-  color: white;
-  border-radius: 2px;
-  background: #7f8c8d;
-  /*&.review-vid {
-  	background: $alizarin;
-  }
-  &.review-site {
-  	background: $asbestos;
-  }*/ }
-  .review .review-title {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 2.2rem;
-    margin: 0; }
-  .review .review-subtitle {
-    margin: 0; }
-
-.specs-list {
+.review-col {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
   @media (min-width: 768px) {
+    .review-col {
+      float: left;
+      width: 33.33333%; } }
+  .review-col .review-overlay {
+    content: ' ';
+    background: #7f8c8d;
+    position: relative;
+    z-index: 1; }
+  .review-col .review {
+    margin: 2rem 0;
+    color: white;
+    border-radius: 2px;
+    background: #7f8c8d;
+    transition: all 400ms;
+    /*&.review-vid {
+    	background: $alizarin;
+    }
+    &.review-site {
+    	background: $asbestos;
+    }*/ }
+    .review-col .review i.fa.fa-youtube-play {
+      position: absolute;
+      top: 36%;
+      left: 42%;
+      font-size: 6rem;
+      opacity: .4; }
+      @media (max-width: 480px) {
+        .review-col .review i.fa.fa-youtube-play {
+          top: 40%; } }
+      @media (max-width: 768px) {
+        .review-col .review i.fa.fa-youtube-play {
+          top: 40%; } }
+      @media (max-width: 480px) {
+        .review-col .review i.fa.fa-youtube-play {
+          top: 30%; } }
+    .review-col .review.youtube-link:hover {
+      background: #e74c3c; }
+    .review-col .review img {
+      width: 100%;
+      opacity: .12; }
+    .review-col .review .review-details {
+      position: absolute;
+      top: 60%;
+      left: 4rem; }
+      @media (max-width: 480px) {
+        .review-col .review .review-details {
+          top: 40%; } }
+      @media (max-width: 768px) {
+        .review-col .review .review-details {
+          top: 70%; } }
+      @media (max-width: 480px) {
+        .review-col .review .review-details {
+          top: 60%; } }
+    .review-col .review .review-title {
+      font-family: 'Fjalla One', sans-serif;
+      font-size: 2.2rem;
+      margin: 0;
+      position: relative;
+      z-index: 2; }
+    .review-col .review .review-subtitle {
+      margin: 0;
+      position: relative;
+      z-index: 2; }
+
+.specs-list {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 340px; }
+  @media (min-width: 768px) {
     .specs-list {
       float: left;
       width: 50%; } }
-  .specs-list .specs-list-title {
+  .specs-list h3.specs-list-title {
     font-family: 'Fjalla One', sans-serif;
     font-size: 2.2rem;
-    margin: 0; }
+    margin: 2rem 0 1rem; }
+  .specs-list table {
+    width: 100%;
+    border-right: 1px solid #ecf0f1;
+    transition: all 300ms; }
+    .specs-list table:hover {
+      border-right: 2px solid #3498db; }
+    .specs-list table thead {
+      width: 100%; }
+      .specs-list table thead tr {
+        width: 100%; }
+        .specs-list table thead tr th {
+          width: 100%;
+          padding: 2rem 0;
+          font-family: 'Fjalla One', sans-serif;
+          font-size: 2.2rem; }
+    .specs-list table tbody {
+      width: 100%; }
+      .specs-list table tbody tr {
+        width: 100%; }
+        .specs-list table tbody tr th {
+          width: 50%;
+          padding: .6rem 0;
+          font-weight: normal; }
+        .specs-list table tbody tr td {
+          width: 50%;
+          padding: .6rem 2rem;
+          font-weight: bold; }
+
+footer {
+  width: 100%;
+  background: #34495e;
+  border-top: 8px solid #2c3e50;
+  box-shadow: 0px -1px 2px 0px rgba(0, 0, 0, 0.34); }
+  footer h4 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    margin: 0 0 2rem;
+    color: white; }
+  footer .footer-links {
+    margin: 4rem 0;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      footer .footer-links {
+        float: left;
+        width: 25%; } }
+    footer .footer-links ul {
+      padding-left: 0; }
+      footer .footer-links ul li {
+        list-style-type: none; }
+        footer .footer-links ul li a {
+          padding: .4rem 0;
+          display: block;
+          color: white;
+          text-transform: uppercase; }
+  footer .footer-info {
+    margin: 4rem 0;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      footer .footer-info {
+        float: left;
+        width: 75%; } }
+    footer .footer-info p {
+      color: white; }
+
+body {
+  position: relative; }
 
 .input-group {
   width: 100%; }

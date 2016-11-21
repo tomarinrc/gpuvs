@@ -2,7 +2,7 @@
 nav.navbar {
 	padding: 0;
 	border: 0;
-	box-shadow: inset 0 -4px 0 0px $silver, 0px 1px 2px 0px rgba(0, 0, 0, 0.34);
+	//box-shadow: inset 0 -4px 0 0px $silver, 0px 1px 2px 0px rgba(0, 0, 0, 0.34);
 	&.navbar-default {
 		background: $clouds;
 		will-change: transform;
@@ -17,12 +17,13 @@ nav.navbar {
 		}
 		.navbar-content {
 			@include make-row();
+			margin-right: 0;
 			.logo {
 				@include make-xs-column(12);
 				@include make-sm-column(4);
-				padding: 2rem;
+				padding: 1rem 2rem;
 				img {
-					height: 3rem;
+					height: 5rem;
 					@include breakpoint($screen-sm-min) {
 						width: auto;
 						margin: auto;
@@ -35,7 +36,7 @@ nav.navbar {
 				@include make-sm-column(8);
 				padding: 1rem 2rem;
 				background: $concrete;
-				border-bottom: 4px solid $asbestos;
+				//border-bottom: 4px solid $asbestos;
 				.searchbox {
 					position: relative;
 					min-width: 5.2rem;
@@ -106,17 +107,18 @@ nav.navbar {
 		//border: 1px solid $bordercolor;
 		//border-width: 0 0 1px;
 		border: 0;
-		box-shadow: inset 0 -4px 0 0px $silver, 0px 1px 2px 0px rgba(0, 0, 0, 0.34);
+		//box-shadow: inset 0 -4px 0 0px $silver, 0px 1px 2px 0px rgba(0, 0, 0, 0.34);
 		.navbar-links {
 			@include make-row();
+			margin-right: 0;
 			.navbar-logo-mini {
-				padding: 2rem;
+				padding: 1rem 2rem;
 				border: none;
 				background: $clouds;
 				float: left;
-				box-shadow: inset 0 -4px 0 0px $silver;
+				//box-shadow: inset 0 -4px 0 0px $silver;
 				img {
-					height: 3rem;
+					height: 5rem;
 				}
 				@include breakpoint(768px) {
 					width: 20%;
@@ -130,10 +132,10 @@ nav.navbar {
 				background: $concrete;
 				padding: 1.8rem 4rem 2.2rem;
 				transition: all 300ms;
-				box-shadow: inset 0 -4px 0 0px $asbestos;
+				//box-shadow: inset 0 -4px 0 0px $asbestos;
 				&:hover {
 					background: $peterriver;
-					box-shadow: inset 0 -4px 0 0px $belizehole;
+					//box-shadow: inset 0 -4px 0 0px $belizehole;
 				}
 				@include breakpoint(767px) {
 					padding: 2rem;
@@ -184,21 +186,20 @@ nav.navbar {
 			.search-icon {
 				display: block;
 				float: right;
-				font-size: 1.4rem;
-				font-weight: bold;
-				padding: 2.1rem 3rem;
+				font-size: 2rem;
+				padding: 1.8rem 2.8rem;
 				color: white;
 				background: $concrete;
 				transition: all 300ms;
-				border-bottom: 4px solid $asbestos;
+				//border-bottom: 4px solid $asbestos;
 				&:hover {
 					background: $peterriver;
-					border-bottom: 4px solid $belizehole;
+					//border-bottom: 4px solid $belizehole;
 				}
 				@include breakpoint(768px) {
 					width: 20%;
 					background: $peterriver;
-					border-bottom: 4px solid $belizehole;
+					//border-bottom: 4px solid $belizehole;
 				}
 			}
 		}
